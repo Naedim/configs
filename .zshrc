@@ -44,5 +44,72 @@ PATH=~/.console-ninja/.bin:$PATH
 
 # 6. Starship Prompt (Cross-shell compatible)
 eval "$(starship init zsh)"
+ 
+# =========================================================
+# Universal Zsh keybindings for WezTerm
+# Works on macOS and Windows (WSL)
+# Prevents escape junk like "D5;"
+# =========================================================
+
+# Use standard emacs-style keybindings
+bindkey -e
+
+# ---------------------------------------------------------
+# Basic arrow keys
+# ---------------------------------------------------------
+bindkey '^[[A' up-line-or-history
+bindkey '^[[B' down-line-or-history
+bindkey '^[[C' forward-char
+bindkey '^[[D' backward-char
+
+# ---------------------------------------------------------
+# Ctrl + Arrow → move by word
+# (xterm / WezTerm standard)
+# ---------------------------------------------------------
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5A' beginning-of-line
+bindkey '^[[1;5B' end-of-line
+
+# Fallback Ctrl+Arrow variants (Windows/WSL)
+bindkey '^[[5C' forward-word
+bindkey '^[[5D' backward-word
+
+# ---------------------------------------------------------
+# Alt / Option + Arrow → move by word
+# (Alt sends ESC prefix)
+# ---------------------------------------------------------
+bindkey '^[^[[C' forward-word
+bindkey '^[^[[D' backward-word
+
+# ---------------------------------------------------------
+# Cmd + Arrow / Home / End
+# (macOS Cmd+Arrow often maps to Home/End)
+# ---------------------------------------------------------
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+bindkey '^[[1~' beginning-of-line
+bindkey '^[[4~' end-of-line
+bindkey '^[[7~' beginning-of-line
+bindkey '^[[8~' end-of-line
+
+# ---------------------------------------------------------
+# Word deletion
+# ---------------------------------------------------------
+bindkey '^W' backward-kill-word      # Ctrl + W
+bindkey '^[d' kill-word              # Alt + D
+bindkey '^[^H' backward-kill-word    # Alt + Backspace
+
+# ---------------------------------------------------------
+# Line deletion
+# ---------------------------------------------------------
+bindkey '^U' backward-kill-line      # Ctrl + U
+bindkey '^K' kill-line               # Ctrl + K
+
+# ---------------------------------------------------------
+# History search (Ctrl + Up / Down)
+# ---------------------------------------------------------
+bindkey '^[[1;5A' history-search-backward
+bindkey '^[[1;5B' history-search-forward
 
 # --- End: Portable Shell Configuration (.zshrc) ---
