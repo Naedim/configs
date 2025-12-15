@@ -1,4 +1,4 @@
-# --- Start: Portable Shell Configuration (.zshrc) ---
+# Portable Shell Configuration (.zshrc) ---
 
 # 1. Clean up PATH setup
 # DO NOT include the long, hardcoded macOS path here.
@@ -39,13 +39,15 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # 5. Other Paths (Generally safe if the tool respects $HOME)
-export PATH="$HOME/.local/bin":$PATH
-PATH=~/.console-ninja/.bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
+#nvim import
+export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
 
 # 6. Starship Prompt (Cross-shell compatible)
 eval "$(starship init zsh)"
  
-# =========================================================
+alias cdwin="cd /mnt/c/Users/DamienNoel/"
+alias lg='lazygit' # =========================================================
 # Universal Zsh keybindings for WezTerm
 # Works on macOS and Windows (WSL)
 # Prevents escape junk like "D5;"
@@ -112,4 +114,5 @@ bindkey '^K' kill-line               # Ctrl + K
 bindkey '^[[1;5A' history-search-backward
 bindkey '^[[1;5B' history-search-forward
 
-# --- End: Portable Shell Configuration (.zshrc) ---
+# --- End: Portable Shell Configuration
+
