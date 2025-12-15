@@ -46,6 +46,19 @@ export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
 # 6. Starship Prompt (Cross-shell compatible)
 eval "$(starship init zsh)"
  
+# --- SSH Agent Management using Keychain ---
+
+# 1. Run keychain to start the agent if needed and check the key.
+# Replace id_ed25519 with your actual key name if different.
+# -q: quiet, --nogui: forces terminal password prompt if needed.
+/usr/bin/keychain -q --nogui $HOME/.ssh/github-ignion
+
+# 2. Source the environment variables set by keychain.
+# This connects the current zsh shell to the single, persistent agent.
+source $HOME/.keychain/$(hostname)-sh
+
+# --- END Keychain Configuration ---
+#
 alias cdwin="cd /mnt/c/Users/DamienNoel/"
 alias lg='lazygit' # =========================================================
 # Universal Zsh keybindings for WezTerm
