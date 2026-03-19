@@ -52,5 +52,17 @@ config.keys = {
 		mods = "CMD",
 		action = wezterm.action.PasteFrom("Clipboard"),
 	},
+	-- CMD-W to close the current pane (closes tab if it's the last pane)
+	{
+		key = "w",
+		mods = "CMD",
+		action = wezterm.action.CloseCurrentPane({ confirm = false }),
+	},
+	-- CMD-SHIFT-W to close the current tab and all its panes
+	{
+		key = "w",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.CloseCurrentTab({ confirm = false }),
+	},
 }
 return config
