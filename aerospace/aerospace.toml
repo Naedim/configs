@@ -236,9 +236,9 @@ ctrl-alt-k = 'focus-monitor up'
 ctrl-alt-l = 'focus-monitor right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
-ctrl-alt-shift-h = ['move-node-to-monitor left',  'focus-monitor left']
-ctrl-alt-shift-j = ['move-node-to-monitor down',  'focus-monitor down']
-ctrl-alt-shift-k = ['move-node-to-monitor up',    'focus-monitor up']
+ctrl-alt-shift-h = ['move-node-to-monitor left', 'focus-monitor left']
+ctrl-alt-shift-j = ['move-node-to-monitor down', 'focus-monitor down']
+ctrl-alt-shift-k = ['move-node-to-monitor up', 'focus-monitor up']
 ctrl-alt-shift-l = ['move-node-to-monitor right', 'focus-monitor right']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
@@ -257,3 +257,9 @@ backspace = ['close-all-windows-but-current', 'mode main']
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 #s = ['layout sticky tiling', 'mode main']
+
+# Force all new windows into tiling mode so they fill the accordion slot
+# See: https://nikitabobko.github.io/AeroSpace/commands#layout
+[[on-window-detected]]
+check-further-callbacks = true
+run = ['layout tiling']
