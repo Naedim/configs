@@ -1,10 +1,10 @@
 # Portable Shell Configuration (.zshrc) ---
 
+autoload -Uz compinit && compinit   
 # 1. Clean up PATH setup
 # DO NOT include the long, hardcoded macOS path here.
 # Let the OS/shell initialization files (like /etc/zshrc or .zprofile) handle
 # system and standard package manager paths (like Homebrew on Linux/macOS).
-
 # 2. Cross-Platform NVM Setup
 # NVM_DIR is portable and uses $HOME
 export NVM_DIR="$HOME/.nvm"
@@ -121,3 +121,9 @@ bindkey '^[[1;5B' history-search-forward
 
 # --- End: Portable Shell Configuration
 
+
+# Java - Amazon Corretto 11 (required for simulation-api project)
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
+export PATH="$JAVA_HOME/bin:$PATH"
+
+alias aws-git-refresh='security delete-internet-password -s git-codecommit.eu-west-1.amazonaws.com 2>/dev/null; true'
