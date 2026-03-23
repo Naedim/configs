@@ -122,7 +122,7 @@ outer.right = 0
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 # You can uncomment the following lines to open up terminal with alt + enter shortcut
 # (like in i3)
-alt-w = 'exec-and-forget /opt/homebrew/bin/wezterm start --always-new-process'
+alt-w = 'exec-and-forget bash -c "/opt/homebrew/bin/wezterm start --always-new-process & sleep 0.5 && /opt/homebrew/bin/aerospace focus right"'
 
 alt-comma = 'layout tiles accordion'
 
