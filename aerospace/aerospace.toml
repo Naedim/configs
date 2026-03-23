@@ -45,39 +45,20 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = [
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "I",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-]
+persistent-workspaces = ["1", "2", "3", "4", "5", "A", "B", "C", "D", "E"]
+
+# See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
+[workspace-to-monitor-force-assignment]
+1 = 'Built-in'
+2 = 'Built-in'
+3 = 'Built-in'
+4 = 'Built-in'
+5 = 'Built-in'
+A = 'T23d'
+B = 'T23d'
+C = 'T23d'
+D = 'T23d'
+E = 'T23d'
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -158,17 +139,28 @@ alt-minus = 'resize smart -50'
 alt-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-ctrl-h = 'workspace --wrap-around prev'
-alt-ctrl-l = 'workspace --wrap-around next'
-alt-ctrl-shift-h = [
+# alt-ctrl-h = 'workspace --wrap-around prev'
+# alt-ctrl-l = 'workspace --wrap-around next'
+# alt-ctrl-shift-h = [
+#   'move-node-to-workspace --wrap-around prev',
+#   'workspace --wrap-around prev',
+# ]
+# alt-ctrl-shift-l = [
+#   'move-node-to-workspace --wrap-around next',
+#   'workspace --wrap-around next',
+# ]
+
+
+alt-u = 'workspace --wrap-around prev'
+alt-i = 'workspace --wrap-around next'
+alt-shift-u = [
   'move-node-to-workspace --wrap-around prev',
   'workspace --wrap-around prev',
 ]
-alt-ctrl-shift-l = [
+alt-shift-i = [
   'move-node-to-workspace --wrap-around next',
   'workspace --wrap-around next',
 ]
-
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus-monitor
 cmd-alt-h = 'focus-monitor left'
 cmd-alt-j = 'focus-monitor down'
@@ -197,9 +189,3 @@ backspace = ['close-all-windows-but-current', 'mode main']
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 #s = ['layout sticky tiling', 'mode main']
-
-# Force all new windows into tiling mode so they fill the accordion slot
-# See: https://nikitabobko.github.io/AeroSpace/commands#layout
-[[on-window-detected]]
-check-further-callbacks = true
-run = ['layout tiling']
