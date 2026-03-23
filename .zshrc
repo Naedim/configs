@@ -51,8 +51,8 @@ eval "$(starship init zsh)"
 # source $HOME/.keychain/$(hostname)-sh
 # --- END Keychain Configuration ---
 #
-alias cdwin="cd /mnt/c/Users/DamienNoel/"
 alias lg='lazygit' # =========================================================
+alias glo='git log --oneline' # =========================================================
 # Universal Zsh keybindings for WezTerm
 # Works on macOS and Windows (WSL)
 # Prevents escape junk like "D5;"
