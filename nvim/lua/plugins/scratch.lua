@@ -1,7 +1,9 @@
 return {
+  { "ibhagwan/fzf-lua", lazy = true },
   {
-    "LintaoAmons/scratch.nvim", -- The plugin repository
-    event = "VeryLazy",
+    "LintaoAmons/scratch.nvim",
+    dependencies = { "ibhagwan/fzf-lua" },
+    lazy = false,
 
     -- Define the keymaps inside the 'keys' table
     keys = {
