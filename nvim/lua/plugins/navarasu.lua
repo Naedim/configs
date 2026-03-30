@@ -7,5 +7,6 @@ return {
       style = "darker",
     })
     require("onedark").load()
+    vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#56b6c2", italic = true })
   end,
 }

@@ -5,8 +5,8 @@ return {
         dim = { animate = { enabled = false } },
         scroll = {
             animate = {
-                easing = "linear",
-                duration = { step = 15, total = 100 },
+                easing = "outCubic",
+                duration = { step = 10, total = 200 },
             },
         },
         picker = {
@@ -22,10 +22,39 @@ return {
                     hidden = true,
                     ignored = true,
                 },
+                lsp_symbols = {
+                    layout = {
+                        layout = {
+                            box = "vertical",
+                            width = 0.4,
+                            min_width = 60,
+                            height = 0.8,
+                            border = true,
+                            title = "{title} {live} {flags}",
+                            { win = "input", height = 1, border = "bottom" },
+                            { win = "list", border = "none" },
+                        },
+                    },
+                },
+                lsp_workspace_symbols = {
+                    layout = {
+                        layout = {
+                            box = "vertical",
+                            width = 0.4,
+                            min_width = 60,
+                            height = 0.8,
+                            border = true,
+                            title = "{title} {live} {flags}",
+                            { win = "input", height = 1, border = "bottom" },
+                            { win = "list", border = "none" },
+                        },
+                    },
+                },
             },
             explorer = {
                 hidden = true,
                 ignored = true,
+                layout = { layout = { position = "right" } },
             },
         },
     },

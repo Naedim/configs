@@ -3,5 +3,5 @@
 -- Add any additional keymaps here
 
 vim.keymap.set("n", "<leader>co", function()
-  Snacks.picker.lsp_symbols({ filter = { kind = { "Function", "Method" } } })
+  Snacks.picker.lsp_symbols({ filter = { kind = { "Function", "Method" } }, layout = { preview = false, width = 0.6 } })
 end, { desc = "Functions (LSP)" })
