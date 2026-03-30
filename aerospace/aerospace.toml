@@ -13,9 +13,9 @@ after-startup-command = ['exec-and-forget sketchybar']
 
 # Notify Sketchybar about workspace change
 exec-on-workspace-change = [
-  '/bin/bash',
-  '-c',
-  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
+    '/bin/bash',
+    '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
 ]
 
 # Start AeroSpace at login
@@ -54,20 +54,18 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["1", "2", "3", "4", "5", "A", "B", "C", "D", "E"]
+persistent-workspaces = ["1A", "1B", "2A", "2B", "2C", "3A", "3B", "3C"]
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [workspace-to-monitor-force-assignment]
-1 = 'Built-in'
-2 = 'Built-in'
-3 = 'Built-in'
-4 = 'Built-in'
-5 = 'Built-in'
-A = 'T23d'
-B = 'T23d'
-C = 'T23d'
-D = 'T23d'
-E = 'T23d'
+1A = 'Built-in'
+1B = 'Built-in'
+2A = 'T23d-10 (1)'
+2B = 'T23d-10 (1)'
+2C = 'T23d-10 (1)'
+3A = 'T23d-10 (2)'
+3B = 'T23d-10 (2)'
+3C = 'T23d-10 (2)'
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -127,38 +125,38 @@ alt-w = 'exec-and-forget bash -c "/opt/homebrew/bin/wezterm start --always-new-p
 alt-comma = 'layout tiles accordion'
 
 alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
 alt-l = 'focus right'
 
 alt-shift-h = 'move left'
 alt-shift-l = 'move right'
 
+
+alt-j = 'workspace --wrap-around prev'
+alt-k = 'workspace --wrap-around next'
+alt-shift-j = [
+    'move-node-to-workspace --wrap-around prev',
+    'workspace --wrap-around prev',
+]
+alt-shift-k = [
+    'move-node-to-workspace --wrap-around next',
+    'workspace --wrap-around next',
+]
 alt-minus = 'resize smart -50'
 alt-equal = 'resize smart +50'
 
 
-alt-u = 'workspace --wrap-around prev'
-alt-i = 'workspace --wrap-around next'
-alt-shift-u = [
-  'move-node-to-workspace --wrap-around prev',
-  'workspace --wrap-around prev',
-]
-alt-shift-i = [
-  'move-node-to-workspace --wrap-around next',
-  'workspace --wrap-around next',
-]
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus-monitor
-cmd-alt-h = 'focus-monitor left'
-cmd-alt-j = 'focus-monitor down'
-cmd-alt-k = 'focus-monitor up'
-cmd-alt-l = 'focus-monitor right'
 
+alt-u = 'focus-monitor 1'
+alt-i = 'focus-monitor 2'
+alt-o = 'focus-monitor 3'
+
+alt-n = 'focus-monitor left'
+alt-m = 'focus-monitor down'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
-cmd-alt-shift-h = ['move-node-to-monitor left', 'focus-monitor left']
-cmd-alt-shift-j = ['move-node-to-monitor down', 'focus-monitor down']
-cmd-alt-shift-k = ['move-node-to-monitor up', 'focus-monitor up']
-cmd-alt-shift-l = ['move-node-to-monitor right', 'focus-monitor right']
+alt-shift-u = ['move-node-to-monitor 1', 'focus-monitor 1']
+alt-shift-i = ['move-node-to-monitor 2', 'focus-monitor 2']
+alt-shift-o = ['move-node-to-monitor 3', 'focus-monitor 3']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
@@ -169,10 +167,9 @@ alt-shift-semicolon = 'mode service'
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 f = [
-  'layout floating tiling',
-  'mode main',
+    'layout floating tiling',
+    'mode main',
 ] # Toggle between floating and tiling layout
-backspace = ['close-all-windows-but-current', 'mode main']
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 #s = ['layout sticky tiling', 'mode main']
