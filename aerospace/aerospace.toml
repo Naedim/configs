@@ -124,8 +124,8 @@ alt-w = 'exec-and-forget bash -c "/opt/homebrew/bin/wezterm start --always-new-p
 
 alt-comma = 'layout tiles accordion'
 
-alt-h = 'focus left'
-alt-l = 'focus right'
+alt-h = 'focus left --boundaries workspace'
+alt-l = 'focus right --boundaries workspace'
 
 alt-shift-h = 'move left'
 alt-shift-l = 'move right'
