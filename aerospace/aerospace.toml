@@ -127,8 +127,8 @@ alt-comma = 'layout tiles accordion'
 alt-h = 'focus left --boundaries workspace'
 alt-l = 'focus right --boundaries workspace'
 
-alt-shift-h = 'move left'
-alt-shift-l = 'move right'
+alt-shift-h = ['move left --boundaries workspace', 'layout h_accordion']
+alt-shift-l = ['move right --boundaries workspace', 'layout h_accordion']
 
 
 alt-j = 'workspace --wrap-around prev'
