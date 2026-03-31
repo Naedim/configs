@@ -26,6 +26,12 @@ config.color_scheme = "rose-pine"
 config.window_background_opacity = 1.0
 config.macos_window_background_blur = 10
 
+-- Make mouse selection clearly visible (rose-pine's default is hard to see)
+config.colors = {
+	selection_fg = "#e0def4", -- rose-pine text
+	selection_bg = "#403d52", -- rose-pine highlight medium
+}
+
 -- ==========================================================
 -- 🛠️ ADDITIONS TO FIX ALT KEY AND MOUSE SELECTION 🛠️
 -- ==========================================================
@@ -64,5 +70,25 @@ config.keys = {
 		mods = "CMD|SHIFT",
 		action = wezterm.action.CloseCurrentTab({ confirm = false }),
 	},
+	-- CTRL+SHIFT+X: open current pane scrollback in a temporary nvim tab
+	{
+		key = "x",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action_callback(function(window, pane)
+			local dims = pane:get_dimensions()
+			local scrollback = pane:get_lines_as_text(dims.scrollback_rows)
+			local tmp = os.tmpname() .. ".log"
+			local f = assert(io.open(tmp, "w"))
+			f:write(scrollback)
+			f:close()
+			window:perform_action(
+				wezterm.action.SpawnCommandInNewTab({
+					args = { "nvim", tmp },
+				}),
+				pane
+			)
+		end),
+	},
 }
+
 return config
