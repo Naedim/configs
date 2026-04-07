@@ -27,9 +27,13 @@ export SONARCLOUD_ORG="your-org-key"
 
 ## Symlinks
 
-Both MCP config files are symlinked from this repo to `~/.copilot/`:
+All config files are symlinked from this repo to `~/.copilot/` for global use across all projects.
+Repo-level `.github/copilot-instructions.md` instructions are **additive** — they stack on top of these global ones.
 
 ```bash
-ln -sf ~/work/configs/copilot/mcp.json ~/.copilot/mcp.json
-ln -sf ~/work/configs/copilot/mcp-config.json ~/.copilot/mcp-config.json
+DOTFILES_COPILOT="path/to/your/dotfiles/copilot"
+
+ln -sf "$DOTFILES_COPILOT/copilot-instructions.md" ~/.copilot/copilot-instructions.md
+ln -sf "$DOTFILES_COPILOT/mcp.json" ~/.copilot/mcp.json
+ln -sf "$DOTFILES_COPILOT/mcp-config.json" ~/.copilot/mcp-config.json
 ```

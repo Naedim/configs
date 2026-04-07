@@ -127,8 +127,7 @@ bindkey '^[[1;5B' history-search-forward
 [ -f "$HOME/.zshrc.secrets" ] && source "$HOME/.zshrc.secrets"
 
 
-# Java - Amazon Corretto 11 (required for simulation-api project)
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
-export PATH="$JAVA_HOME/bin:$PATH"
+# Language-specific configs — add a new file to ~/.zshrc.d/ for each language
+for f in "$HOME/.zshrc.d/"*.zsh; do [ -f "$f" ] && source "$f"; done
 
 alias aws-git-refresh='security delete-internet-password -s git-codecommit.eu-west-1.amazonaws.com 2>/dev/null; true'
