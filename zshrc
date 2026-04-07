@@ -121,6 +121,11 @@ bindkey '^[[1;5B' history-search-forward
 
 # --- End: Portable Shell Configuration
 
+# Private secrets are stored in a separate file outside this repo to avoid
+# exposing sensitive values (API tokens, org keys, etc.) in a public dotfiles repo.
+# Up to you to create this external file and update the expected name
+[ -f "$HOME/.zshrc.secrets" ] && source "$HOME/.zshrc.secrets"
+
 
 # Java - Amazon Corretto 11 (required for simulation-api project)
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
