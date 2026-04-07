@@ -1,0 +1,14 @@
+{
+  "servers": {
+    "sonarcloud": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@sonarqube/mcp-server"],
+      "env": {
+        "SONARQUBE_TOKEN": "${SONARCLOUD_TOKEN}",
+        "SONARQUBE_URL": "https://sonarcloud.io",
+        "SONARQUBE_ORGANIZATION": "${SONARCLOUD_ORG}"
+      }
+    }
+  }
+}
