@@ -3,7 +3,7 @@ local config = wezterm.config_builder()
 
 config.default_cursor_style = "SteadyBar"
 config.automatically_reload_config = true
-config.window_close_confirmation = "NeverPrompt"
+config.window_close_confirmation = "AlwaysPrompt"
 config.adjust_window_size_when_changing_font_size = false
 config.window_decorations = "RESIZE"
 -- config.check_for_updates = false
