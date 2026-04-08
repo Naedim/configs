@@ -9,6 +9,16 @@ return {
     if vim.fn.executable(java_bin) == 1 then
       table.insert(opts.cmd, 2, "--java-executable=" .. java_bin)
     end
+    -- Declare non-standard integration-test source root so jdtls adds it to
+    -- the build path and test runners (e.g. <leader>tt) can discover candidates.
+    opts.settings = vim.tbl_deep_extend("force", opts.settings or {}, {
+      java = {
+        project = {
+          sourcePaths = { "src/integration-test/java" },
+        },
+      },
+    })
+
     return opts
   end,
 }
