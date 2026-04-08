@@ -53,10 +53,30 @@ eval "$(starship init zsh)"
 #
 alias lg='lazygit' # =========================================================
 alias glo='git log --oneline' # =========================================================
-# Universal Zsh keybindings for WezTerm
-# Works on macOS and Windows (WSL)
-# Prevents escape junk like "D5;"
-# =========================================================
+
+#automatically create a bare clone of a git repository in a new directory, and set it up for use as a working tree
+git-bare-clone() {
+  local url=$1
+  # If $2 is provided, use it. Otherwise, extract the name from the URL.
+  local dir=${2:-$(basename "$url" .git)}
+
+  if [ -z "$url" ]; then
+    echo "Usage: git-bare-clone <url> [directory]"
+    return 1
+  fi
+
+  git clone --bare "$url" "$dir/.git"
+  cd "$dir"
+  
+  # Tell git where the "actual" repo is for this working tree setup
+  git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+  
+  # Optional: Create a .gitignore that ignores everything except the .git folder
+  # This keeps your root clean if you accidentally add files there
+  echo "/*\n!.git/" > .gitignore
+
+  echo "Bare repo initialized in $dir."
+}
 
 # Use standard emacs-style keybindings
 bindkey -e
