@@ -6,7 +6,7 @@ return {
         scroll = {
             animate = {
                 easing = "outCubic",
-                duration = { step = 10, total = 200 },
+                duration = { step = 5, total = 300 },
             },
         },
         picker = {
