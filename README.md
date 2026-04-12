@@ -6,36 +6,36 @@ Tools
 
 - Neovim (LazyVim)
   - Purpose: Neovim configuration tailored for LazyVim (plugins, settings, and plugin lockfiles).
-  - Docs: https://github.com/LazyVim/LazyVim
-  - Neovim: https://neovim.io
+  - Docs: <https://github.com/LazyVim/LazyVim>
+  - Neovim: <https://neovim.io>
   - Quick use: ln -s /path/to/configs/nvim ~/.config/nvim
 
 - Starship (prompt)
   - Purpose: Fast, minimal shell prompt configuration (starship.toml).
-  - Docs: https://github.com/starship/starship
-  - Website: https://starship.rs
+  - Docs: <https://github.com/starship/starship>
+  - Website: <https://starship.rs>
   - Quick use: ln -s /path/to/configs/starship/starship.toml ~/.config/starship.toml
 
 - WezTerm (terminal)
   - Purpose: WezTerm terminal emulator config (wezterm.lua).
-  - Docs: https://github.com/wez/wezterm
-  - Website: https://wezfurlong.org/wezterm/
+  - Docs: <https://github.com/wez/wezterm>
+  - Website: <https://wezfurlong.org/wezterm/>
   - Quick use: ln -s /path/to/configs/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
 
 - zsh
   - Purpose: zsh startup files (zshrc and zshrc.d).
-  - Docs: https://www.zsh.org/
+  - Docs: <https://www.zsh.org/>
   - Quick use: ln -s /path/to/configs/zsh/zshrc ~/.zshrc && ln -s /path/to/configs/zsh/zshrc.d ~/.zshrc.d
 
-- sketchybar (macOS)
+- sketchybar (macOS) (Work in progress)
   - Purpose: macOS status bar setup and plugins (sketchybarrc and plugin files).
-  - Docs/GitHub: https://github.com/felixkratz/SketchyBar
+  - Docs/GitHub: <https://github.com/felixkratz/SketchyBar>
   - Quick use: ln -s /path/to/configs/sketchybar/sketchybarrc ~/.config/sketchybar/sketchybarrc
 
 - Copilot-related configs
   - Purpose: Copilot/automation helper config and instructions (see copilot/ directory).
-  - Docs: https://docs.github.com/en/copilot
-  - CLI (if used): https://github.com/github/copilot-cli
+  - Docs: <https://docs.github.com/en/copilot>
+  - CLI (if used): <https://github.com/github/copilot-cli>
   - Quick use: follow copilot/copilot-instructions.md in this repo for setup details.
 
 - aerospace (user-specific)
