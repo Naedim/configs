@@ -1,29 +1,23 @@
-# Configuration Documentation
+# Installation Instructions
 
-This document provides an overview of the various configuration folders included in the repository.
+Follow these steps to install the necessary tools and configure your environment:
 
-## wezterm
-WezTerm is a GPU-accelerated terminal emulator and multiplexer. 
-- **Configuration Location**: `wezterm/`
+## Tool Dependencies
+- Tool A: Version 1.2.3
+- Tool B: Version 4.5.6
 
-## neovim
-Neovim is an extensible text editor that allows for better plugin management and enhances collaboration.
-- **Configuration Location**: `neovim/`
+## Setup Guide for Each Configuration
+### Configuration 1
+1. Step 1 for Configuration 1
+2. Step 2 for Configuration 1
 
-## aerospace
-Aerospace is a toolset designed for managing aerospace-related data and configurations. 
-- **Configuration Location**: `aerospace/`
+### Configuration 2
+1. Step 1 for Configuration 2
+2. Step 2 for Configuration 2
 
-## copilot
-Copilot provides AI-assisted coding suggestions within supported development environments.
-- **Configuration Location**: `copilot/`
+### Configuration 3
+1. Step 1 for Configuration 3
+2. Step 2 for Configuration 3
 
-## starship
-Starship is a cross-shell prompt that guides your terminal prompt with context and information efficiently.
-- **Configuration Location**: `starship/`
-
-## sketchybar
-SketchyBar is a highly customizable status bar for macOS. 
-- **Configuration Location**: `sketchybar/`
-
-Please refer to the relevant configuration directories for specific settings and usage details.
+## Example Usage
+Provide examples of how to use the configurations.
