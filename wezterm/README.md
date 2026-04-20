@@ -1,6 +1,6 @@
 # WezTerm — config summary
 
-This folder contains a WezTerm config (wezterm.lua) tuned for macOS. Summary of features present in the config:
+Summary of the current `wezterm.lua` configuration.
 
 - Appearance
   - Font: JetBrains Mono (Bold)
@@ -18,23 +18,23 @@ This folder contains a WezTerm config (wezterm.lua) tuned for macOS. Summary of 
   - window_background_opacity = 1.0
 
 - macOS-specific fixes and keybindings
-  - Ensure Alt/Option acts as ALT modifier (prevents composed characters):
+  - Ensure Alt/Option acts as ALT modifier:
     send_composed_key_when_left_alt_is_pressed = false
   - CMD-C / CMD-V mapped to CopyTo("Clipboard") and PasteFrom("Clipboard") so copy/paste works even when a command is running
   - CMD-W: close current pane; CMD-SHIFT-W: close current tab
 
 - Utility keybinding
-  - CTRL+SHIFT+X: capture the current pane scrollback to a temporary file and open it in nvim in a new tab. Useful for inspecting large outputs.
+  - CTRL+SHIFT+X: capture current pane scrollback to a temporary file and open it in Neovim in a new tab.
 
 - Selection appearance
-  - Makes mouse selection colors clearer for the rose-pine scheme (selection_fg/selection_bg overrides)
+  - Clearer mouse selection colors for the rose-pine scheme (`selection_fg` / `selection_bg` overrides)
 
 Links
-- WezTerm docs: https://wezfurlong.org/wezterm/
-- WezTerm GitHub: https://github.com/wez/wezterm
+
+- WezTerm docs: <https://wezfurlong.org/wezterm/>
+- WezTerm GitHub: <https://github.com/wez/wezterm>
 
 How to use
-1. Symlink the entire folder to your XDG config directory: ln -s /path/to/configs/wezterm ~/.config/wezterm
-2. Restart WezTerm to pick up config changes (config auto-reloads when saved).
 
-If you want different keybindings (e.g., tmux-style splits, different copy/paste mappings, or a different color scheme), say which preferences to apply and I'll update the config and README accordingly.
+1. Symlink the folder to `~/.config/wezterm`: `ln -s /path/to/configs/wezterm ~/.config/wezterm`
+2. Restart WezTerm if needed. Config changes also auto-reload on save.

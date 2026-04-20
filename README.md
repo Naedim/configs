@@ -1,6 +1,6 @@
 # configs — Damien's dotfiles
 
-This repository contains personal configurations for multiple command-line and GUI tools. Below is a concise list of the configs included, what they configure, and links to official documentation.
+Configuration files for command-line and GUI tools, with quick setup examples and links to upstream docs.
 
 Tools
 
@@ -38,20 +38,18 @@ Tools
   - CLI (if used): <https://github.com/github/copilot-cli>
   - Quick use: follow copilot/copilot-instructions.md in this repo for setup details.
 
-- aerospace (user-specific)
-  - Purpose: Contains aerospace.toml — marked as a user-specific or project-specific config with no public doc link. If this should map to a public project, provide details.
+- aerospace (windows tiling manager)
+  - Purpose: AeroSpace window manager configuration (`aerospace.toml`).
   - Quick use: treat as a project config (example: ln -s /path/to/configs/aerospace.toml ~/.config/aerospace.toml)
 
 How to use these configs (example)
 
-1. Clone this repo to ~/work/configs (or a path you prefer).
+1. Clone this repo to ~/configs (or a path you prefer).
 2. Create symlinks from the config files to your $XDG or home locations, e.g.:
-   - ln -s ~/work/configs/nvim ~/.config/nvim
-   - ln -s ~/work/configs/starship/starship.toml ~/.config/starship.toml
-   - ln -s ~/work/configs/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
-   - ln -s ~/work/configs/zsh/zshrc ~/.zshrc
+   - ln -s ~/configs/nvim ~/.config/nvim
+   - ln -s ~/configs/starship/starship.toml ~/.config/starship.toml
+   - ln -s ~/configs/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
+   - ln -s ~/configs/zsh/zshrc ~/.zshrc
 3. Notes:
    - Neovim: this config expects LazyVim. Install LazyVim first (see LazyVim docs) and then use the nvim folder here as your LazyVim config.
    - macOS: sketchybar is macOS-only; ensure you have the binary installed before using the sketchybar config.
-
-If any of these entries need a more detailed description or a different link (for example the "aerospace" config), tell me and I will update the README.

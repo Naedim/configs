@@ -3,22 +3,22 @@
 ## Files
 
 ### `copilot-instructions.md`
-Custom instructions for GitHub Copilot. Defines behavior, workflows, and integrations (e.g. SonarCloud).
-Symlinked to `~/.copilot/` or placed in `.github/` at the repo level.
+Custom instructions for GitHub Copilot. Defines behavior, workflows, and integrations such as SonarCloud.
+Can be symlinked to `~/.copilot/` or placed in `.github/` at the repo level.
 
 ### `mcp.json`
 MCP servers that run **locally as a process** (stdio transport).
-Copilot spawns them via `npx`, `uvx`, etc.
-Symlinked to `~/.copilot/mcp.json`.
+Copilot starts them via `npx`, `uvx`, and similar tools.
+Symlink target: `~/.copilot/mcp.json`.
 
 ### `mcp-config.json`
 MCP servers accessed **remotely over HTTP** (no local process).
-Symlinked to `~/.copilot/mcp-config.json`.
+Symlink target: `~/.copilot/mcp-config.json`.
 
 ## Setup
 
-Both `mcp.json` and `mcp-config.json` reference environment variables for sensitive values.
-These must be defined locally in `~/.zshrc.secrets` (not committed):
+`mcp.json` and `mcp-config.json` reference environment variables for sensitive values.
+Define them locally in `~/.zshrc.secrets` and do not commit them:
 
 ```bash
 export SONARCLOUD_TOKEN="your-token"
@@ -27,7 +27,7 @@ export SONARCLOUD_ORG="your-org-key"
 
 ## Symlinks
 
-All config files are symlinked from this repo to `~/.copilot/` for global use across all projects.
+All config files can be symlinked from this repo to `~/.copilot/` for global use across projects.
 Repo-level `.github/copilot-instructions.md` instructions are **additive** — they stack on top of these global ones.
 
 ```bash

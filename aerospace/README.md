@@ -1,13 +1,13 @@
 # AeroSpace — motions & keybindings summary
 
-This directory contains configuration for AeroSpace (macOS window manager). Place a copy of this file at ~/.aerospace.toml to customize behavior. Below is a concise summary of the motions and keybindings provided by the current config.
+Summary of the current AeroSpace config and its main keybindings.
 
 Principles
 
-- Default layout: "accordion" with automatic orientation per monitor.
-- Gaps are currently set to 0; containers can be tiled or accordion.
-- Some workspaces are persistent and some are assigned to specific monitors (see workspace-to-monitor-force-assignment).
-- Mouse follows focus when monitor focus changes (moves to monitor center).
+- Default layout: `accordion` with automatic orientation per monitor.
+- Gaps are set to 0; containers can be tiled or accordion.
+- Some workspaces are persistent and some are assigned to specific monitors.
+- Mouse follows monitor focus.
 
 Primary motion keys (Alt modifier = ⌥)
 
@@ -45,8 +45,6 @@ Binding modes
 
 Notes
 
-- Install AeroSpace and put a copy of this config at ~/.aerospace.toml (the file includes more options and comments).
+- Install AeroSpace and place this config at `~/.aerospace.toml`.
 - Docs and commands: <https://nikitabobko.github.io/AeroSpace/>
-- The config also notifies sketchybar on workspace changes and can run commands after startup (see after-startup-command).
-
-If any of these key choices should be changed or you want an expanded cheatsheet, say which keys to prefer and a short persona for the layout (e.g., "vim-style" or "macOS friendly").
+- The config notifies sketchybar on workspace changes and can run commands after startup.
