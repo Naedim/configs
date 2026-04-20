@@ -1,4 +1,4 @@
-# configs — Damien's dotfiles
+# configs — dotfiles
 
 Configuration files for command-line and GUI tools, with quick setup examples and links to upstream docs.
 
