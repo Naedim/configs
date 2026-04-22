@@ -54,28 +54,48 @@ eval "$(starship init zsh)"
 alias lg='lazygit' # =========================================================
 alias glo='git log --oneline' # =========================================================
 
-#automatically create a bare clone of a git repository in a new directory, and set it up for use as a working tree
+# Automatically create a bare clone in .git and check out a usable working tree.
+# Intentionally does not delete partial results on failure; inspect and remove
+# them manually if you decide they are safe to discard.
 git-bare-clone() {
   local url=$1
-  # If $2 is provided, use it. Otherwise, extract the name from the URL.
   local dir=${2:-$(basename "$url" .git)}
+  local branch
 
-  if [ -z "$url" ]; then
+  if [[ -z "$url" ]]; then
     echo "Usage: git-bare-clone <url> [directory]"
     return 1
   fi
 
-  git clone --bare "$url" "$dir/.git"
-  cd "$dir"
-  
-  # Tell git where the "actual" repo is for this working tree setup
-  git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
-  
-  # Optional: Create a .gitignore that ignores everything except the .git folder
-  # This keeps your root clean if you accidentally add files there
-  echo "/*\n!.git/" > .gitignore
+  if [[ -e "$dir" ]]; then
+    echo "Error: $dir already exists"
+    return 1
+  fi
 
-  echo "Bare repo initialized in $dir."
+  mkdir -p -- "$dir" || return 1
+
+  git clone --bare -- "$url" "$dir/.git" || {
+    echo "Error: clone failed. Left $dir in place for manual cleanup."
+    return 1
+  }
+  git --git-dir="$dir/.git" config core.bare false || return 1
+  git --git-dir="$dir/.git" config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" || return 1
+  git --git-dir="$dir/.git" fetch origin || return 1
+
+  branch=$(git --git-dir="$dir/.git" symbolic-ref --quiet --short HEAD) || {
+    echo "Error: could not determine the default branch"
+    return 1
+  }
+
+  git --git-dir="$dir/.git" --work-tree="$dir" checkout "$branch" || {
+    echo "Error: checkout failed. Left $dir in place for manual cleanup."
+    return 1
+  }
+  git --git-dir="$dir/.git" branch --set-upstream-to="origin/$branch" "$branch" >/dev/null || return 1
+
+  cd -- "$dir" || return 1
+
+  echo "Cloned $url into $dir with a working tree."
 }
 
 # Use standard emacs-style keybindings
@@ -149,5 +169,3 @@ bindkey '^[[1;5B' history-search-forward
 
 # Language-specific configs — add a new file to ~/.zshrc.d/ for each language
 for f in "$HOME/.zshrc.d/"*.zsh; do [ -f "$f" ] && source "$f"; done
-
-alias aws-git-refresh='security delete-internet-password -s git-codecommit.eu-west-1.amazonaws.com 2>/dev/null; true'

@@ -2,21 +2,23 @@
 
 Configuration files for command-line and GUI tools, with quick setup examples and links to upstream docs.
 
-Tools
+The tooling is oriented around a minimal coding workflow with agentic assistance, with a focus on Neovim as the main editor and a set of complementary tools for terminal, shell, and macOS status bar configuration. Heavy use of git worktrees for parallel feature developments
+
+Tools:
 
 - Neovim (LazyVim)
-  - Purpose: Neovim configuration tailored for LazyVim (plugins, settings, and plugin lockfiles).
+  - Purpose: code editing with low ressource requirements.
   - Docs: <https://github.com/LazyVim/LazyVim>
   - Neovim: <https://neovim.io>
   - Quick use: ln -s /path/to/configs/nvim ~/.config/nvim
 
 - Starship (prompt)
-  - Purpose: Fast, minimal shell prompt configuration (starship.toml).
+  - Purpose: Fast, minimal shell prompt configuration (starship.toml). (work in progress)
   - Docs: <https://github.com/starship/starship>
   - Website: <https://starship.rs>
   - Quick use: ln -s /path/to/configs/starship/starship.toml ~/.config/starship.toml
 
-- WezTerm (terminal)
+- WezTerm (terminal multiplexer that I use heavily for my worktree-oriented workflow using neovim + github copilot CLI)
   - Purpose: WezTerm terminal emulator config (wezterm.lua).
   - Docs: <https://github.com/wez/wezterm>
   - Website: <https://wezfurlong.org/wezterm/>
@@ -28,18 +30,18 @@ Tools
   - Quick use: ln -s /path/to/configs/zsh/zshrc ~/.zshrc && ln -s /path/to/configs/zsh/zshrc.d ~/.zshrc.d
 
 - sketchybar (macOS) (Work in progress)
-  - Purpose: macOS status bar setup and plugins (sketchybarrc and plugin files).
+  - Purpose: macOS status bar setup and plugins + better UX with aerospace window tilling manager (sketchybarrc and plugin files).
   - Docs/GitHub: <https://github.com/felixkratz/SketchyBar>
   - Quick use: ln -s /path/to/configs/sketchybar/sketchybarrc ~/.config/sketchybar/sketchybarrc
 
 - Copilot-related configs
-  - Purpose: Copilot/automation helper config and instructions (see copilot/ directory).
+  - Purpose: agentic coding config and instructions (see copilot/ directory).
   - Docs: <https://docs.github.com/en/copilot>
   - CLI (if used): <https://github.com/github/copilot-cli>
   - Quick use: follow copilot/copilot-instructions.md in this repo for setup details.
 
 - aerospace (windows tiling manager)
-  - Purpose: AeroSpace window manager configuration (`aerospace.toml`).
+  - Purpose: AeroSpace window manager configuration, override the native space system of macos (`aerospace.toml`).
   - Quick use: treat as a project config (example: ln -s /path/to/configs/aerospace.toml ~/.config/aerospace.toml)
 
 How to use these configs (example)
