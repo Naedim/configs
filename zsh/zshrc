@@ -52,6 +52,19 @@ eval "$(starship init zsh)"
 # --- END Keychain Configuration ---
 #
 alias lg='lazygit' # =========================================================
+
+# yazi — shell wrapper to cd into the last directory on exit
+yy() {
+  local tmp
+  tmp=$(mktemp -t yazi-cwd.XXXXXX)
+  yazi "$@" --cwd-file="$tmp"
+  if [[ -s "$tmp" ]]; then
+    local cwd
+    cwd=$(cat "$tmp")
+    [[ "$cwd" != "$PWD" ]] && cd -- "$cwd"
+  fi
+  rm -f "$tmp"
+}
 alias glo='git log --oneline' # =========================================================
 
 # Automatically create a bare clone in .git and check out a usable working tree.

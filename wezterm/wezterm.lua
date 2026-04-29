@@ -70,6 +70,12 @@ config.keys = {
 		mods = "CMD|SHIFT",
 		action = wezterm.action.CloseCurrentTab({ confirm = false }),
 	},
+	-- CMD-E: open yazi in a new tab (exits by changing shell directory via yy)
+	{
+		key = "e",
+		mods = "CMD",
+		action = wezterm.action.SpawnCommandInNewTab({ args = { "zsh", "-i", "-c", "yy" } }),
+	},
 	-- CTRL+SHIFT+X: open current pane scrollback in a temporary nvim tab
 	{
 		key = "x",
