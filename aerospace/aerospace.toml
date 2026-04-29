@@ -121,6 +121,7 @@ outer.right = 0
 # You can uncomment the following lines to open up terminal with alt + enter shortcut
 # (like in i3)
 alt-w = 'exec-and-forget bash -c "/opt/homebrew/bin/wezterm start --always-new-process & sleep 0.5 && /opt/homebrew/bin/aerospace focus right"'
+alt-g = 'exec-and-forget open -na "Google Chrome" --args --new-window'
 
 alt-comma = 'layout tiles accordion'
 

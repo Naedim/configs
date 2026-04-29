@@ -43,8 +43,32 @@ Binding modes
     - r   : reset/flatten workspace layout and return to main mode
     - f   : toggle between floating and tiling layout and return to main mode
 
+App launchers
+
+- Alt + w: open a new WezTerm window on the focused monitor
+- Alt + g: open a new Google Chrome window
+
 Notes
 
 - Install AeroSpace and place this config at `~/.aerospace.toml`.
 - Docs and commands: <https://nikitabobko.github.io/AeroSpace/>
 - The config notifies sketchybar on workspace changes and can run commands after startup.
+
+---
+
+## macOS requirements
+
+**Privacy & Security → Accessibility**: enable AeroSpace
+
+**Desktop & Dock**:
+- Displays have separate Spaces → **Off** (AeroSpace cannot reliably move windows between monitors when enabled; needs logout to apply)
+- Automatically rearrange Spaces based on most recent use → **Off**
+- Stage Manager → **Off**
+
+**Keyboard → Keyboard Shortcuts**:
+- Mission Control: ensure no `⌥` shortcuts clash with `⌥ j/k/h/l/u/i/o`
+- Input Sources: ensure "select previous/next input source" does not use `⌥`
+
+**Side effects**: all `⌥`-bound keys lose their special character (⌥g → ©, ⌥w → ∑, ⌥h → ˙, ⌥j → ∆, ⌥k → ˚, ⌥l → ¬)
+
+**⌘H**: `automatically-unhide-macos-hidden-apps = false` — hidden apps stay hidden
