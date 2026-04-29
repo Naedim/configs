@@ -89,7 +89,7 @@ config.keys = {
 			f:close()
 			window:perform_action(
 				wezterm.action.SpawnCommandInNewTab({
-					args = { "nvim", tmp },
+					args = { "/opt/homebrew/bin/nvim", tmp },
 				}),
 				pane
 			)
