@@ -1,0 +1,12 @@
+[opener]
+# Open files/directories in nvim with CWD set to the opened directory.
+# For a directory: cd into it. For a file: cd into its parent directory.
+edit = [
+  { run = '''cd -- "$([ -d "$1" ] && echo "$1" || dirname "$1")" && nvim "$@"''', block = true, desc = "$editor" },
+]
+
+[open]
+# Apply the edit opener to directories so CMD+O on a folder opens nvim there.
+prepend_rules = [
+  { name = "*/", use = ["edit"] },
+]

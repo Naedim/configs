@@ -44,6 +44,11 @@ Tools:
   - Purpose: AeroSpace window manager configuration, override the native space system of macos (`aerospace.toml`).
   - Quick use: treat as a project config (example: ln -s /path/to/configs/aerospace.toml ~/.config/aerospace.toml)
 
+- yazi (file manager)
+  - Purpose: yazi terminal file manager config. Configures the edit opener so that nvim always opens with CWD set to the selected directory (or the parent directory of the selected file).
+  - Docs: <https://yazi-rs.github.io>
+  - Quick use: ln -s /path/to/configs/yazi ~/.config/yazi
+
 How to use these configs (example)
 
 1. Clone this repo to ~/configs (or a path you prefer).
@@ -52,6 +57,7 @@ How to use these configs (example)
    - ln -s ~/configs/starship/starship.toml ~/.config/starship.toml
    - ln -s ~/configs/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
    - ln -s ~/configs/zsh/zshrc ~/.zshrc
+   - ln -s ~/configs/yazi ~/.config/yazi
 3. Notes:
    - Neovim: this config expects LazyVim. Install LazyVim first (see LazyVim docs) and then use the nvim folder here as your LazyVim config.
    - macOS: sketchybar is macOS-only; ensure you have the binary installed before using the sketchybar config.

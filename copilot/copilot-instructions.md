@@ -1,5 +1,33 @@
 # Copilot Custom Instructions
 
+## Dotfiles Repo Context
+
+This repo (`~/work/configs`) is a **macOS dotfiles repo**. All configs are symlinked from here into their expected locations on the system:
+
+| Config dir/file         | Symlink target                          |
+|-------------------------|-----------------------------------------|
+| `nvim/`                 | `~/.config/nvim`                        |
+| `wezterm/wezterm.lua`   | `~/.config/wezterm/wezterm.lua`         |
+| `zsh/zshrc`             | `~/.zshrc`                              |
+| `zsh/zshrc.d/`          | `~/.zshrc.d`                            |
+| `starship/starship.toml`| `~/.config/starship.toml`               |
+| `sketchybar/`           | `~/.config/sketchybar`                  |
+| `aerospace/`            | `~/.config/aerospace`                   |
+| `yazi/`                 | `~/.config/yazi`                        |
+| `copilot/copilot-instructions.md` | `~/.copilot/copilot-instructions.md` |
+| `copilot/mcp.json`      | `~/.copilot/mcp.json`                   |
+| `copilot/mcp-config.json` | `~/.copilot/mcp-config.json`          |
+
+The machine is a **MacBook** running macOS. Tool binaries are installed via Homebrew (prefix: `/opt/homebrew`).
+
+### After every config change
+
+After adding or updating any configuration in this repo, always check:
+
+1. **`README.md`** (repo root) — does it list the tool? Are the purpose, docs link, and `ln -s` quick-use command accurate?
+2. **Tool-specific `README.md`** (e.g. `copilot/README.md`) — does it reflect the current files and setup steps?
+3. **Symlink table above** — if a new config dir/file was added, update the table in this file too.
+
 ## SonarCloud Integration
 
 You have access to a SonarCloud MCP server via the `sonarcloud` tool. Use it proactively when working on code quality tasks.
