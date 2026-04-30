@@ -122,6 +122,7 @@ outer.right = 0
 # (like in i3)
 alt-w = 'exec-and-forget bash -c "/opt/homebrew/bin/wezterm start --always-new-process & sleep 0.5 && /opt/homebrew/bin/aerospace focus right"'
 alt-g = 'exec-and-forget open -na "Google Chrome" --args --new-window'
+alt-b = 'exec-and-forget /opt/homebrew/bin/sketchybar --bar hidden=toggle'
 
 alt-comma = 'layout tiles accordion'
 
