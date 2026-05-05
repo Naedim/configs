@@ -32,7 +32,7 @@ After adding or updating any configuration in this repo, always check:
 
 ## CLI Workflow Reminders
 
-After **every** response (including the first message in a new session), always append a **💡 Reminders** block listing **all** commands from the table below. Never skip or filter this block.
+After **every** response, always append a **💡 Reminders** block listing **all** commands from the table below. Never skip or filter this block.
 
 | Command / Shortcut | When it's useful |
 |--------------------|-----------------|
