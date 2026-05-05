@@ -10,7 +10,11 @@ $cmd_duration\
 $character"""
 
 [directory]
+format = "[$path]($style)[$read_only]($read_only_style) "
+style = "cyan bold"
 read_only = " "
+truncation_length = 3
+truncate_to_repo = false
 
 [battery]
 full_symbol = "•"
