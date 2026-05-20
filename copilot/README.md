@@ -3,7 +3,7 @@
 ## Files
 
 ### `copilot-instructions.md`
-Custom instructions for GitHub Copilot. Defines behavior, workflows, and integrations such as SonarCloud.
+Custom instructions for GitHub Copilot. Defines behavior, workflows, integrations such as SonarCloud, and Caveman brevity mode.
 Can be symlinked to `~/.copilot/` or placed in `.github/` at the repo level.
 
 ### `mcp.json`
@@ -37,3 +37,5 @@ ln -sf "$DOTFILES_COPILOT/copilot-instructions.md" ~/.copilot/copilot-instructio
 ln -sf "$DOTFILES_COPILOT/mcp.json" ~/.copilot/mcp.json
 ln -sf "$DOTFILES_COPILOT/mcp-config.json" ~/.copilot/mcp-config.json
 ```
+
+The global instructions now include Caveman mode, so Copilot replies and commit messages stay terse by default while keeping technical detail.

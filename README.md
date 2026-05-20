@@ -35,7 +35,7 @@ Tools:
   - Quick use: ln -s /path/to/configs/sketchybar/sketchybarrc ~/.config/sketchybar/sketchybarrc
 
 - Copilot-related configs
-  - Purpose: agentic coding config and instructions (see copilot/ directory).
+  - Purpose: agentic coding config and instructions (see copilot/ directory), including Caveman brevity mode.
   - Docs: <https://docs.github.com/en/copilot>
   - CLI (if used): <https://github.com/github/copilot-cli>
   - Quick use: follow copilot/copilot-instructions.md in this repo for setup details.
