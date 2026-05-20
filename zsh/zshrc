@@ -184,3 +184,6 @@ bindkey '^[[1;5B' history-search-forward
 
 # Language-specific configs — add a new file to ~/.zshrc.d/ for each language
 for f in "$HOME/.zshrc.d/"*.zsh; do [ -f "$f" ] && source "$f"; done
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
