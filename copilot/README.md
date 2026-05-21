@@ -15,6 +15,8 @@ Symlink target: `~/.copilot/mcp.json`.
 MCP servers accessed **remotely over HTTP** (no local process).
 Symlink target: `~/.copilot/mcp-config.json`.
 
+Includes remote servers such as Atlassian and Stripe.
+
 ## Setup
 
 `mcp.json` and `mcp-config.json` reference environment variables for sensitive values.
@@ -24,6 +26,8 @@ Define them locally in `~/.zshrc.secrets` and do not commit them:
 export SONARCLOUD_TOKEN="your-token"
 export SONARCLOUD_ORG="your-org-key"
 ```
+
+Stripe MCP uses OAuth in Copilot, so no local Stripe secret key belongs in this repo.
 
 ## Symlinks
 
@@ -38,4 +42,4 @@ ln -sf "$DOTFILES_COPILOT/mcp.json" ~/.copilot/mcp.json
 ln -sf "$DOTFILES_COPILOT/mcp-config.json" ~/.copilot/mcp-config.json
 ```
 
-The global instructions now include Caveman mode, so Copilot replies and commit messages stay terse by default while keeping technical detail.
+The global instructions now make Caveman mode the default, so Copilot replies and commit messages stay terse without needing `/caveman` while keeping technical detail.
