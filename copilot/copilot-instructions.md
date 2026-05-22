@@ -48,23 +48,6 @@ After adding or updating any configuration in this repo, always check:
 
 ---
 
-## CLI Workflow Reminders
-
-After **every** response, always append a **💡 Reminders** block listing **all** commands from the table below. Never skip or filter this block.
-
-| Command / Shortcut | When it's useful |
-|--------------------|-----------------|
-| `Shift+Tab` → Autopilot | Long multi-step or investigative tasks — Copilot runs to completion without pausing |
-| `/ask` | Quick side questions that shouldn't pollute the main conversation history |
-| `/share` | Export session or last response as a gist/markdown — great for Jira tickets or team reports |
-| `/fleet` | Run parallel subagents — compare or process multiple things simultaneously |
-| `/plan` | Before starting complex multi-file or multi-step work |
-| `/rewind` | Undo the last turn and revert any file changes |
-| `/research` | Deep-dive investigation using GitHub search and web sources |
-| `/delegate` | Hand off a long-running task to the cloud agent so it runs in the background |
-
----
-
 ## SonarCloud Integration
 
 You have access to a SonarCloud MCP server via the `sonarcloud` tool. Use it proactively when working on code quality tasks.
