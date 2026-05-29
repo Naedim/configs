@@ -32,6 +32,7 @@ This repo (`~/work/configs`) is a **macOS dotfiles repo**. All configs are symli
 | `sketchybar/`           | `~/.config/sketchybar`                  |
 | `aerospace/`            | `~/.config/aerospace`                   |
 | `yazi/`                 | `~/.config/yazi`                        |
+| `lazygit/config.yml`    | `~/.config/lazygit/config.yml`          |
 | `copilot/copilot-instructions.md` | `~/.copilot/copilot-instructions.md` |
 | `copilot/mcp.json`      | `~/.copilot/mcp.json`                   |
 | `copilot/mcp-config.json` | `~/.copilot/mcp-config.json`          |

@@ -1,0 +1,6 @@
+os:
+  # Open in current LazyVim when running inside Neovim terminal.
+  # Fallback to launching Neovim when running from plain shell.
+  edit: 'if [ -n "$NVIM" ]; then nvim --server "$NVIM" --remote "{{filename}}"; else nvim "{{filename}}"; fi'
+  editAtLine: 'if [ -n "$NVIM" ]; then nvim --server "$NVIM" --remote "+{{line}}" "{{filename}}"; else nvim +{{line}} "{{filename}}"; fi'
+  openDirInEditor: 'if [ -n "$NVIM" ]; then nvim --server "$NVIM" --remote "{{dir}}"; else nvim "{{dir}}"; fi'

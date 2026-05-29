@@ -49,6 +49,11 @@ Tools:
   - Docs: <https://yazi-rs.github.io>
   - Quick use: ln -s /path/to/configs/yazi ~/.config/yazi
 
+- lazygit (git TUI)
+  - Purpose: lazygit config to open files in Neovim by default, including remote-open into current LazyVim when lazygit runs inside Neovim.
+  - Docs: <https://github.com/jesseduffield/lazygit>
+  - Quick use: mkdir -p ~/.config/lazygit && ln -s /path/to/configs/lazygit/config.yml ~/.config/lazygit/config.yml
+
 How to use these configs (example)
 
 1. Clone this repo to ~/configs (or a path you prefer).
@@ -58,6 +63,7 @@ How to use these configs (example)
    - ln -s ~/configs/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
    - ln -s ~/configs/zsh/zshrc ~/.zshrc
    - ln -s ~/configs/yazi ~/.config/yazi
+   - mkdir -p ~/.config/lazygit && ln -s ~/configs/lazygit/config.yml ~/.config/lazygit/config.yml
 3. Notes:
    - Neovim: this config expects LazyVim. Install LazyVim first (see LazyVim docs) and then use the nvim folder here as your LazyVim config.
    - macOS: sketchybar is macOS-only; ensure you have the binary installed before using the sketchybar config.
