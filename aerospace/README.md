@@ -41,6 +41,7 @@ Binding modes
   - In service mode:
     - Esc : reload config and return to main mode
     - r   : reset/flatten workspace layout and return to main mode
+    - m   : merge windows from `1A/1B/2B/2C/3A/3B/3C` into `2A`, focus `2A`, return to main mode
     - f   : toggle between floating and tiling layout and return to main mode
 
 App launchers

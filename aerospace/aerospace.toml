@@ -166,6 +166,11 @@ alt-shift-semicolon = 'mode service'
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
+m = [
+    'exec-and-forget /bin/bash -c "for ws in 1A 1B 2B 2C 3A 3B 3C; do /opt/homebrew/bin/aerospace list-windows --workspace \"$ws\" --format \"%{window-id}\" 2>/dev/null | while read -r wid; do [ -n \"$wid\" ] && /opt/homebrew/bin/aerospace move-node-to-workspace --window-id \"$wid\" 2A; done; done"',
+    'workspace 2A',
+    'mode main',
+] # merge windows from non-primary workspaces into laptop workspace
 f = [
     'layout floating tiling',
     'mode main',
