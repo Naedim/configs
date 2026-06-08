@@ -11,7 +11,7 @@ LazyVim-based Neovim config with a small set of workflow overrides.
 - `<leader>co` opens LSP symbols filtered to functions and methods.
 - `trouble.nvim` symbols view opens on the right.
 - `scratch.nvim` is available for quick notes with `<M-C-n>`, `<M-C-o>`, and `<leader>fs`.
-- GitHub Copilot and Copilot Chat are enabled.
+- `codecompanion.nvim` is enabled with GitHub Copilot adapter.
 - `vim-visual-multi` is installed for multi-cursor editing.
 - Java support uses `nvim-jdtls` and includes `src/integration-test/java`.
 - Bufferline is always visible.
@@ -19,7 +19,6 @@ LazyVim-based Neovim config with a small set of workflow overrides.
 
 ## Enabled extras
 
-- Copilot / Copilot Chat
 - Astro
 - Go
 - Java
